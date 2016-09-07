@@ -5,7 +5,7 @@
  */
 package Views;
 
-import Details.javaconnect;
+import Util.DatabaseConnection;
 
 /**
  *
@@ -19,7 +19,8 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         //initialinzing the connection with mysql database
-        javaconnect.connect();
+        DatabaseConnection.connect();
+        DatabaseConnection.checkConnection();
     }
 
     /**
@@ -39,7 +40,8 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Login");
 
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

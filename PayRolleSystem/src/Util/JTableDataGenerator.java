@@ -35,9 +35,10 @@ public class JTableDataGenerator {
                     }
                     ((DefaultTableModel) table.getModel()).insertRow(rs.getRow() - 1, row);
                 }
-
+          
 //            }
             DatabaseConnection.closeConnection();
+            rs.close();
             
         } catch (SQLException e) {
             e.printStackTrace();
